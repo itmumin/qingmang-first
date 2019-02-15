@@ -175,6 +175,7 @@ web-view 组件是一个可以用来承载网页的容器，会自动铺满整�
 - [原生组件的使用限制](https://developers.weixin.qq.com/miniprogram/dev/component/native-component.html)
 
 - 因此必须使用[cover-view 与 cover-image](https://developers.weixin.qq.com/miniprogram/dev/component/cover-view.html)设置遮罩层
+   cover-image 不支持gif等动图
 
 - [设置点击并播放](https://developers.weixin.qq.com/miniprogram/dev/api/VideoContext.html)
 
