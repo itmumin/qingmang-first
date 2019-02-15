@@ -1,0 +1,6 @@
+<!--page/inside/inside.wxml-->
+<view class="container">
+    <image src="/image/picture.png" mode="widthFix"/>
+    <text class="content" space="emsp">我们似乎税额撒到附近案芬撒旦房奥德赛可能法拉盛的看法今年拉萨的看法呢士大</text>
+    <text class="author" bindtap="backPage">---极生厌-岩谷</text>
+</view>

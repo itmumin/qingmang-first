@@ -1,0 +1,87 @@
+<!-- page/articleDetail/articleDetail.wxml -->
+<wxs src="../../utils/filter.wxs" module="filter"></wxs>
+<view class="container">
+    <view class="head">
+        <text class="title">{{ articleDetail.title }}</text>
+        <view class="author-date">
+            <text class="author">{{ articleDetail.author }}</text>
+            <text class="date">{{ articleDetail.publishTime }}</text>
+        </view>
+    </view>
+    <view class="main">
+        <swiper class="swiper-container"
+                indicator-dots="true"
+                autoplay="true"
+                interval="3000"
+                indicator-active-color="green"
+                indicator-color="#000"
+                hidden="{{ !articleDetail.banner[0] }}">
+            <block wx:for="{{ articleDetail.banner }}" wx:key="index">
+                <swiper-item>
+                    <image src="{{ item }}"/>
+                </swiper-item>
+            </block>
+        </swiper>
+
+        <view class="audio-container" hidden="{{ !articleDetail.audio.src }}">
+            <view class="audio-control" bindtap="onAudioPlay">
+                <image src="/image/list/article/icon/play.png" wx:if="{{ !onAudioPlayImg }}"/>
+                <image src="/image/list/article/icon/pause.png" wx:else/>
+            </view>
+            <view class="audio-info">
+                <view class="audio-title">
+                    <text >{{ articleDetail.audio.audioTitle }}</text>
+                </view>
+                <view class="audio-from">
+                    <text >{{ articleDetail.audio.from }}</text>
+                </view>
+                <view class="audio-progress">
+                    <progress  percent="{{ percent }}"
+                               stroke-width="6"
+                               style="width:{{ progressWidth + 'rpx' }}"/>
+                    <view class="progress-circle" style="left: {{ progressCircleLeft + 'rpx' }}"></view>
+                </view>
+                <view class="audio-time">
+                    <text >{{ format(currentTime) }}</text>
+                    <text >{{ format(articleDetail.audio.duration) }}</text>
+                </view>
+            </view>
+        </view>
+
+        <view class="video-container" hidden="{{ !articleDetail.video.src }}">
+            <video id="myVideo"
+                   controls="true" 
+                   src="{{ articleDetail.video.src }}"
+                   danmu-list="{{ danmuList }}"
+                   danmu-btn="true"
+                   enable-danmu="true">
+                <cover-view class="control" wx:if="{{ videoControlHidden }}">
+                    <cover-image src="{{ articleDetail.video.poster }}" class="img"></cover-image>
+                    <cover-view class="control-box">
+                        <cover-image class="play" src="/image/icon/Icon_circle_fill.png" bindtap="onVideoPlay"></cover-image>
+                        <cover-view class="date">{{ articleDetail.video.duration }}</cover-view>
+                    </cover-view>
+                </cover-view>
+            </video>
+        </view>
+
+        <view class="content">
+            <text decode="true">{{ filter(articleDetail.content) }}</text>
+        </view>     
+        <view class="readNum">
+            <text >阅读</text>
+            <text >{{ articleDetail.readNum }}</text>
+        </view>
+    </view>
+</view>
+
+<wxs module="format">
+    var format = function (date) {
+        var m = Math.floor(date / 60)
+        var s = date % 60
+        m = m > 9 ? m : ('0' + m)
+        s = s > 9 ? s : ('0' + s)
+        return m + ':' + s
+    }
+    module.exports = format
+</wxs>

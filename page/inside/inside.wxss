@@ -1,0 +1,25 @@
+/* page/inside/inside.wxss */
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 5rpx;
+}
+
+.container image {
+    width: 100%;
+}
+
+.container .content {
+    width: 28em;
+    font-size: 28rpx;
+    word-spacing: 3px;
+    line-height: 72rpx;
+    letter-spacing: 0.5em;
+    text-align: center;
+}
+
+.container .author {
+    margin-top: 20rpx;
+    font-size: 28rpx;
+    text-align: right;
+}

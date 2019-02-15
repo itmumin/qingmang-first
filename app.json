@@ -1,0 +1,9 @@
+{
+  "pages": [
+    "page/list/list",
+    "page/index/index",
+    "page/inside/inside",
+    "page/type/type",
+    "page/articleDetail/articleDetail"
+  ]
+}

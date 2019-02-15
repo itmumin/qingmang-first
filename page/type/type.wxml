@@ -1,0 +1,45 @@
+<!-- page/type/type.wxml -->
+<view class="type-container">
+    <view class="container" wx:if="{{ article }}">
+        <image class="title-bg" mode="widthFix" src="{{ article.imgSrc }}"/>
+        <view class="article">
+            <view class="article-fu">
+                <view class="article-title">
+                    <text>{{ article.title }}</text>
+                </view>
+                <view class="article-share">
+                    <image src="/image/list/article/icon/Icon_relay.png" />
+                    <image src="/image/list/article/icon/Icon_more.png" />
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="lsit-container"  wx:if="{{ markPeople }}">
+        <view class="per-article" wx:for="{{ markPeople }}" wx:key="id" bindtap="toArticlePage" data-id="{{ item.id }}">
+            <view class="article-head">
+                <image src="{{ item.markPeopleAvatar }}" />
+                <text>{{ item.markPeople }}</text>
+                <text>等</text>
+                <text>{{ item.markCount }}</text>
+                <text>人马克了</text>
+            </view>
+            <image mode="widthFix" class="article-cover" src="{{ item.articleImgSrc }}" />
+            <text class="article-title">{{ item.articleTitle }}</text>
+            <view class="article-handle-box">
+                <text class="article-type">{{ item.publishTime }}</text>
+                <view class="article-handle">
+                    <view data-articleType="{{ item.articleType }}" bindtap="onMoretap">
+                        <image src="/image/list/article/icon/Icon_more.png" />
+                    </view>
+                    <button open-type="share">
+                        <image src="/image/list/article/icon/Icon_relay.png" />
+                    </button>
+                    <view bindtap="onLike" data-index="{{ index }}">
+                        <image wx:if="{{ !listLike[index] }}" src="/image/list/article/icon/Icon_circle.png" />
+                        <image wx:else src="/image/list/article/icon/Icon_circle_fill.png" />
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,44 @@
+/* page/type/type.wxss */
+@import '../comonm-list.wxss';
+
+.container {
+    position: relative;
+}
+
+.container .title-bg {
+    width: 100%;
+}
+
+.container .article,
+.container .article-fu {
+    width: 100%;
+    height: 150rpx;
+    background-color: #ccc;
+}
+.container .article {
+    margin-top: -10rpx;
+}
+.container .article-fu {
+    position: absolute;
+    transform: translateY(-50%);
+    left: 10%;
+    width: 80%;
+    background-color: #fff;
+    display: flex;
+    padding: 20rpx;
+    justify-content: space-between;
+}
+.container .article-share {
+    margin-top: 100rpx;
+}
+.container .article-share image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 10rpx;
+}
+
+.list-container {
+    background-color: #ccc;
+    width: 100%;
+    height: 500rpx;
+}

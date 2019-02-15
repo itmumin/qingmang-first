@@ -1,0 +1,6 @@
+<!--page/index/index.wxml-->
+<view class="container">
+    <image src="/images/avatar.jpg" class="avatar"/>
+    <text class="username" decode="true">我&nbsp;&nbsp;们&nbsp;&nbsp;仨</text>
+    <text class="welcome" bindtap="toNextPage">欢迎来到牧民</text>
+</view>

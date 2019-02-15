@@ -1,0 +1,137 @@
+/* page/articleDetail/articleDetail.wxss */
+.container {
+    padding: 10rpx;
+}
+.head .title {
+    font-size: 40rpx;
+}
+.author-date text{
+    font-size: 28rpx;
+    color: #ccc;
+    margin-left: 10rpx;
+}
+.author-date .author {
+    color: green;
+}
+.swiper-container {
+    height: 500rpx;
+}
+.swiper-container image {
+    width: 100%;
+    height: 500rpx;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+
+}
+.video-container video {
+    width: 600rpx;
+    height: 450rpx;
+}
+
+.audio-container {
+    display: flex;
+    align-items: center;
+    width: 95%;
+    background-color: #ddd;
+    margin-left: 2.5%;
+}
+.audio-control {
+    width: 80rpx;
+    height: 80rpx;
+    margin: 0 20rpx
+}
+.audio-control image {
+    width: 100%;
+    height: 100%;
+}
+.audio-info {
+    width: calc(80% - 40rpx);
+}
+.audio-info > view {
+padding: 5rpx 0;
+}
+.audio-info .audio-title text{
+    font-size: 32rpx;
+}
+.audio-from text {
+    font-size: 28rpx;
+}
+.audio-container .audio-progress {
+    position: relative;
+    padding: 0;
+}
+
+.progress-circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 12rpx;
+    height: 12rpx;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.audio-time {
+    display: flex;
+    justify-content: space-between;
+}
+.audio-time text {
+    font-size: 24rpx;
+    color: #fff;
+}
+
+.control {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: pink;
+}
+
+.control .img {
+    width: 100%;
+    height: 100%;
+}
+
+.control-box {
+    position: absolute;
+    top: calc(50% - 25rpx);
+    left: calc(50% - 25rpx);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50rpx;
+    height: 50rpx;
+    background-color: rgba(0, 0, 0, .6);
+    border-radius: 50%;
+}
+
+.control-box .play {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.control-box .date {
+    font-size: 20rpx;
+    color: #fff;
+}
+
+
+.content {
+    border-bottom: 1rpx solid #ccc;
+    text-indent: 1em;
+}
+
+.content text {
+    font-size: 28rpx;
+    text-indent: 30rpx;
+    line-height: 32rpx;
+}
+
+.readNum {
+    font-size: 28rpx;
+    color: #ccc;
+}
+
